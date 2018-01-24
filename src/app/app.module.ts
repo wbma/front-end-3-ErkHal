@@ -4,7 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ListMediaComponent } from './list-media/list-media.component';
-import { MediaService } from './media.service';
+import { MediaService } from './services/media.service';
+import { DigitransitService } from './services/digitransit.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { MediaService } from './media.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [MediaService],
+  providers: [MediaService, DigitransitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

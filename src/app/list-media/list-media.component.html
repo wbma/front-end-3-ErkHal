@@ -10,3 +10,10 @@
     </p>
   </li>
 </ul>
+<button (click)="getBusRoutes()"> Get routes</button>
+<ul *ngIf="busRouteArray">
+<h4>- DigiTransit -</h4>
+  <li *ngFor="let pattern of busRouteArray">
+    <h5>{{pattern.route.longName}}</h5>
+  </li>
+</ul>

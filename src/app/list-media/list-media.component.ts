@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MediaService } from '../media.service';
+import { MediaService } from '../services/media.service';
+import { DigitransitService } from '../services/digitransit.service';
 
 @Component({
   selector: 'app-list-media',
@@ -10,10 +11,13 @@ export class ListMediaComponent implements OnInit {
 
   printThis : string;
   mediaArray: any;
+  busRouteArray: any;
+  stopName = 'Gransinmäki';
 
-  constructor(public mediaService: MediaService) { }
+  constructor(public mediaService: MediaService, public digiTransit: DigitransitService) { }
 
   ngOnInit() {
+
     this.printThis = this.mediaService.printWord();
     this.mediaService.getAllMedia().subscribe( data => {
       console.log(data);
@@ -27,8 +31,12 @@ export class ListMediaComponent implements OnInit {
         media.thumbnail = newUrl;
 
       });
-
     });
   }
 
+  getBusRoutes() {
+    this.digiTransit.getRoutesFromStop(this.stopName).subscribe( result => {
+      this.busRouteArray = result.data.stop;
+    });
+  }
 }
