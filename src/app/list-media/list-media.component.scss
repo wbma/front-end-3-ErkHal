@@ -1,5 +1,63 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
+$blueBg : #007ac9;
+
 ul {
   list-style: none;
+}
+
+.bluebg {
+  background-color: $blueBg;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.rounded {
+  border-radius: 1rem;
+}
+
+.apiMediaCard {
+  width: 30%;
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.searchBoxContainer {
+  background-color: #007ac9;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.searchBox {
+  width: 20%;
+  height: 4rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.searchBtn {
+  height: 4rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  img {
+    max-width: 32px;
+    max-height: 32px;
+  }
+}
+
+.routeCard {
+  background-color: #FFF;
+  padding: 1rem;
+  margin: 1rem;
 }

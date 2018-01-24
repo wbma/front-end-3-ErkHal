@@ -12,7 +12,7 @@ export class ListMediaComponent implements OnInit {
   printThis : string;
   mediaArray: any;
   busRouteArray: any;
-  stopName = 'Gransinmäki';
+  stopName: string;
 
   constructor(public mediaService: MediaService, public digiTransit: DigitransitService) { }
 
@@ -36,7 +36,7 @@ export class ListMediaComponent implements OnInit {
 
   getBusRoutes() {
     this.digiTransit.getRoutesFromStop(this.stopName).subscribe( result => {
-      this.busRouteArray = result.data.stop;
+      this.busRouteArray = result.data.stops[0].patterns;
     });
   }
 }

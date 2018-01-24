@@ -1,8 +1,8 @@
 <p>
   {{ printThis }}
 </p>
-<ul>
-  <li *ngFor="let media of mediaArray" >
+<ul class="flexContainer">
+  <li class="apiMediaCard centered rounded" *ngFor="let media of mediaArray" >
     <img src="{{ mediaService.mediaUrl }}{{ media.thumbnail }}"/>
     <h4>{{media.title}}</h4>
     <p>
@@ -10,10 +10,17 @@
     </p>
   </li>
 </ul>
-<button (click)="getBusRoutes()"> Get routes</button>
+<div class="searchBoxContainer bluebg rounded">
+  <input class="searchBox" [(ngModel)]="stopName" placeholder="Bus stop name"/>
+  <button class="searchBtn" (click)="getBusRoutes()">
+    <img src="../assets/magnifier.svg"/>
+</button>
+</div>
+<div class="flexContainer bluebg rounded">
 <ul *ngIf="busRouteArray">
-<h4>- DigiTransit -</h4>
-  <li *ngFor="let pattern of busRouteArray">
-    <h5>{{pattern.route.longName}}</h5>
-  </li>
-</ul>
+    <li class="routeCard rounded" *ngFor="let pattern of busRouteArray">
+      <h4>{{ pattern.name.split(" ")[0] }}</h4>
+      <h5>{{ pattern.route.longName }}</h5>
+    </li>
+  </ul>
+</div>
