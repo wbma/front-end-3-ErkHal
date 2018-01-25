@@ -1,13 +1,15 @@
 <p>
   {{ printThis }}
 </p>
-<ul class="flexContainer">
-  <li class="apiMediaCard centered rounded" *ngFor="let media of mediaArray" >
-    <img src="{{ mediaService.mediaUrl }}{{ media.thumbnail }}"/>
-    <h4>{{media.title}}</h4>
-    <p>
-      {{media.description}}
-    </p>
+<ul class="card-deck">
+  <li class="card" *ngFor="let media of mediaArray" >
+    <img class="card-img-top" src="{{ mediaService.mediaUrl }}{{ media.thumbnail }}"/>
+    <div class="card-body">
+      <h4 class="card-title">{{media.title}}</h4>
+      <p class="card-text">
+        {{media.description}}
+      </p>
+    </div>
   </li>
 </ul>
 <div class="searchBoxContainer bluebg rounded">
@@ -16,11 +18,11 @@
     <img src="../assets/magnifier.svg"/>
 </button>
 </div>
-<div class="flexContainer bluebg rounded">
 <ul *ngIf="busRouteArray">
-    <li class="routeCard rounded" *ngFor="let pattern of busRouteArray">
-      <h4>{{ pattern.name.split(" ")[0] }}</h4>
-      <h5>{{ pattern.route.longName }}</h5>
+    <li class="card" *ngFor="let pattern of busRouteArray">
+      <div class="card-body">
+        <h4 class="card-title">{{ pattern.name.split(" ")[0] }}</h4>
+        <h5 class="card-text">{{ pattern.route.longName }}</h5>
+      </div>
     </li>
-  </ul>
-</div>
+</ul>

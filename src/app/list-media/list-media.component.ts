@@ -36,7 +36,7 @@ export class ListMediaComponent implements OnInit {
 
   getBusRoutes() {
     this.digiTransit.getRoutesFromStop(this.stopName).subscribe( result => {
-      this.busRouteArray = result.data.stops[0].patterns;
+      this.busRouteArray = result["data"].stops[0].patterns;
     });
   }
 }

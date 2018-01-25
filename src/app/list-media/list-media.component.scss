@@ -2,17 +2,8 @@
 
 $blueBg : #007ac9;
 
-ul {
-  list-style: none;
-}
-
 .bluebg {
   background-color: $blueBg;
-}
-
-.flexContainer {
-  display: flex;
-  justify-content: center;
 }
 
 .centered {
@@ -21,13 +12,6 @@ ul {
 
 .rounded {
   border-radius: 1rem;
-}
-
-.apiMediaCard {
-  width: 30%;
-  border: 1px solid black;
-  padding: 1rem;
-  margin: 1rem;
 }
 
 .searchBoxContainer {
@@ -54,10 +38,4 @@ ul {
     max-width: 32px;
     max-height: 32px;
   }
-}
-
-.routeCard {
-  background-color: #FFF;
-  padding: 1rem;
-  margin: 1rem;
 }
