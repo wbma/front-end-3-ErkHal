@@ -1,28 +1,32 @@
-<p>
-  {{ printThis }}
-</p>
-<ul class="card-deck">
-  <li class="card" *ngFor="let media of mediaArray" >
-    <img class="card-img-top" src="{{ mediaService.mediaUrl }}{{ media.thumbnail }}"/>
-    <div class="card-body">
-      <h4 class="card-title">{{media.title}}</h4>
-      <p class="card-text">
-        {{media.description}}
-      </p>
-    </div>
-  </li>
-</ul>
-<div class="searchBoxContainer bluebg rounded">
-  <input class="searchBox" [(ngModel)]="stopName" placeholder="Bus stop name"/>
-  <button class="searchBtn" (click)="getBusRoutes()">
-    <img src="../assets/magnifier.svg"/>
-</button>
-</div>
-<ul *ngIf="busRouteArray">
-    <li class="card" *ngFor="let pattern of busRouteArray">
-      <div class="card-body">
-        <h4 class="card-title">{{ pattern.name.split(" ")[0] }}</h4>
-        <h5 class="card-text">{{ pattern.route.longName }}</h5>
+<div class="row">
+  <div class="col">
+    <p>
+      {{ printThis }}
+    </p>
+    <div class="flexContainer">
+      <div class="card" *ngFor="let media of mediaArray" >
+        <img class="card-img-top" [src]="mediaService.mediaUrl+media.thumbnail"/>
+        <div class="card-body">
+          <h4 class="card-title">{{media.title}}</h4>
+          <p class="card-text">
+            {{media.description}}
+          </p>
+        </div>
       </div>
-    </li>
-</ul>
+    </div>
+    <div class="searchBoxContainer bluebg rounded">
+      <input class="searchBox" [(ngModel)]="stopName" placeholder="Bus stop name"/>
+      <button class="searchBtn" (click)="getBusRoutes()">
+        <img src="../assets/magnifier.svg"/>
+    </button>
+    </div>
+    <ul *ngIf="busRouteArray">
+        <li class="card" *ngFor="let pattern of busRouteArray">
+          <div class="card-body">
+            <h4 class="card-title">{{ pattern.name.split(" ")[0] }}</h4>
+            <h5 class="card-text">{{ pattern.route.longName }}</h5>
+          </div>
+        </li>
+    </ul>
+  </div>
+</div>

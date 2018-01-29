@@ -1,5 +1,14 @@
 $blueBg : #007ac9;
 
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 30%;
+  margin: 1rem;
+}
+
 .bluebg {
   background-color: $blueBg;
 }
